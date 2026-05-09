@@ -4,136 +4,245 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BhejoCalculator – Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for BhejoCalculator app by Sarvesh Pandey." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500&display=swap');
-
     :root {
-      --bg: #faf9f7;
-      --surface: #ffffff;
-      --text: #1c1b19;
-      --muted: #6b6860;
-      --accent: #2e6b4f;
-      --accent-light: #e8f4ee;
-      --border: #e4e1db;
-      --radius: 10px;
+      --bg:        #09110e;
+      --bg2:       #0d1a14;
+      --surface:   #111f18;
+      --surface2:  #172419;
+      --border:    #1e3027;
+      --accent:    #1db954;
+      --accent2:   #0e8c3c;
+      --teal:      #2dd4bf;
+      --text:      #e8f2ec;
+      --muted:     #7da68a;
+      --radius:    16px;
+      --radius-sm: 10px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Source Sans 3', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
+      overflow-x: hidden;
       line-height: 1.75;
-      font-size: 16px;
-      padding: 0 16px 60px;
     }
 
-    header {
-      background: var(--surface);
+    /* ─── NAV (identical to index.html) ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 40px;
+      background: rgba(9,17,14,.9);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      padding: 28px 0 24px;
-      text-align: center;
-      margin: 0 -16px 40px;
     }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 10px; object-fit: cover; }
+    .nav-logo span { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--text); font-weight: 700; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.active { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent) !important; color: #071008 !important;
+      padding: 8px 18px; border-radius: 8px; font-weight: 700 !important; font-size: 13px !important;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: #25e066 !important; transform: translateY(-1px); }
 
-    header .badge {
-      display: inline-block;
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 20px;
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      position: relative;
+      text-align: center;
+      padding: 64px 24px 56px;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(29,185,84,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-header .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(29,185,84,.1); border: 1px solid rgba(29,185,84,.22);
+      color: var(--accent); font-size: 11px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -.02em;
       margin-bottom: 12px;
     }
-
-    header h1 {
-      font-family: 'Lora', serif;
-      font-size: clamp(22px, 5vw, 32px);
-      font-weight: 600;
-      color: var(--text);
+    .page-header h1 em {
+      font-style: normal;
+      background: linear-gradient(120deg, var(--accent) 0%, var(--teal) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-header .meta {
+      font-size: 14px; color: var(--muted);
     }
 
-    header p.meta {
-      margin-top: 6px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .container {
-      max-width: 720px;
+    /* ─── CONTENT AREA ─── */
+    .content {
+      max-width: 760px;
       margin: 0 auto;
+      padding: 48px 24px 80px;
     }
 
-    section {
+    /* ─── POLICY CARDS ─── */
+    .policy-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 28px 30px;
-      margin-bottom: 20px;
+      padding: 30px 32px;
+      margin-bottom: 16px;
+      transition: border-color .2s;
     }
+    .policy-card:hover { border-color: var(--accent2); }
 
-    h2 {
-      font-family: 'Lora', serif;
-      font-size: 18px;
-      font-weight: 600;
+    .policy-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 700;
       color: var(--accent);
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--accent-light);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .policy-card h2 .icon {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: rgba(29,185,84,.1); border: 1px solid rgba(29,185,84,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; flex-shrink: 0;
     }
 
-    p { margin-bottom: 12px; color: var(--text); }
-    p:last-child { margin-bottom: 0; }
-
-    ul {
-      padding-left: 20px;
-      margin-bottom: 12px;
+    .policy-card p {
+      font-size: 15px; color: var(--text);
+      margin-bottom: 12px; line-height: 1.75;
     }
-    ul li { margin-bottom: 6px; }
+    .policy-card p:last-child { margin-bottom: 0; }
+
+    .policy-card ul {
+      padding-left: 0; margin-bottom: 12px; list-style: none;
+    }
+    .policy-card ul li {
+      font-size: 15px; color: var(--text);
+      padding: 7px 0 7px 20px;
+      border-bottom: 1px solid var(--border);
+      position: relative; line-height: 1.6;
+    }
+    .policy-card ul li:last-child { border-bottom: none; }
+    .policy-card ul li::before {
+      content: '';
+      position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+    }
 
     a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a:hover { text-decoration: underline; color: #25e066; }
 
-    .contact-box {
-      background: var(--accent-light);
-      border: 1px solid #b8d9c7;
+    /* ─── INTRO CARD ─── */
+    .intro-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
       border-radius: var(--radius);
-      padding: 20px 24px;
-      margin-top: 8px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      font-size: 15px; color: var(--muted); line-height: 1.75;
     }
-    .contact-box p { color: var(--text); margin-bottom: 6px; }
-    .contact-box a { font-weight: 600; }
+    .intro-card strong { color: var(--text); }
 
+    /* ─── CONTACT CARD ─── */
+    .contact-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-top: 8px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(29,185,84,.12); border: 1px solid rgba(29,185,84,.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .contact-card p { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+    .contact-card a { font-size: 16px; font-weight: 700; color: var(--accent); }
+
+    /* ─── FOOTER (identical to index.html) ─── */
     footer {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 36px;
-      padding-top: 20px;
+      background: var(--bg);
       border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy span { color: var(--accent); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      nav { padding: 12px 16px; }
+      .nav-links { display: none; }
+      .policy-card { padding: 22px 18px; }
+      .contact-card { flex-direction: column; align-items: flex-start; gap: 12px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="badge">Legal</div>
-  <h1>BhejoCalculator Privacy Policy</h1>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="src/bhejocalc_logo.png" alt="BhejoCalculator" />
+    <span>BhejoCalc</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#features">Features</a>
+    <a href="index.html#screenshots">Screenshots</a>
+    <a href="privacy.html" class="active">Privacy</a>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.sarvesh.bhejocalculator" target="_blank" rel="noopener">Download Free</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="badge">🔒 Legal</div>
+  <h1>Privacy <em>Policy</em></h1>
   <p class="meta">Effective date: April 16, 2026 &nbsp;·&nbsp; Developer: Sarvesh Pandey</p>
-</header>
+</div>
 
-<div class="container">
+<!-- CONTENT -->
+<div class="content">
 
-  <section>
-    <p>This privacy policy applies to the <strong>BhejoCalculator</strong> app (the "Application") for mobile devices, created by <strong>Sarvesh Pandey</strong> (the "Service Provider") as a free service. This service is intended for use "AS IS".</p>
-  </section>
+  <!-- Intro -->
+  <div class="intro-card">
+    This privacy policy applies to the <strong>BhejoCalculator</strong> app (the "Application") for mobile devices, created by <strong>Sarvesh Pandey</strong> (the "Service Provider") as a free service. This service is intended for use "AS IS".
+  </div>
 
-  <section>
-    <h2>Information Collection and Use</h2>
+  <!-- Information Collection -->
+  <div class="policy-card">
+    <h2><span class="icon">📋</span> Information Collection and Use</h2>
     <p>The Application collects information when you download and use it. This may include:</p>
     <ul>
       <li>Your device's Internet Protocol (IP) address</li>
@@ -144,13 +253,14 @@
     <p>The Application does <strong>not</strong> gather precise location information about your mobile device.</p>
     <p>The Application does <strong>not</strong> use Artificial Intelligence (AI) technologies to process your data.</p>
     <p>The Service Provider may use the information you provide to contact you with important notices or marketing promotions. Information you provide will be retained and used as described in this policy.</p>
-  </section>
+  </div>
 
-  <section>
-    <h2>Third Party Access</h2>
+  <!-- Third Party -->
+  <div class="policy-card">
+    <h2><span class="icon">🔗</span> Third Party Access</h2>
     <p>Only aggregated, anonymized data is periodically shared with external services to improve the Application. The Application uses the following third-party service whose Privacy Policy governs their data handling:</p>
     <ul>
-      <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener">AdMob</a></li>
+      <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" rel="noopener">AdMob by Google</a></li>
     </ul>
     <p>The Service Provider may also disclose information:</p>
     <ul>
@@ -158,51 +268,69 @@
       <li>When necessary to protect rights, safety, or investigate fraud</li>
       <li>With trusted service providers bound by this privacy statement</li>
     </ul>
-  </section>
+  </div>
 
-  <section>
-    <h2>Opt-Out Rights</h2>
+  <!-- Opt-Out -->
+  <div class="policy-card">
+    <h2><span class="icon">🚫</span> Opt-Out Rights</h2>
     <p>You can stop all information collection by uninstalling the Application using the standard uninstall process available on your mobile device or via the app marketplace.</p>
-  </section>
+  </div>
 
-  <section>
-    <h2>Data Retention Policy</h2>
+  <!-- Data Retention -->
+  <div class="policy-card">
+    <h2><span class="icon">🗄️</span> Data Retention Policy</h2>
     <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. To request deletion of your data, contact <a href="mailto:pluspluslevel@gmail.com">pluspluslevel@gmail.com</a>.</p>
-  </section>
+  </div>
 
-  <section>
-    <h2>Children</h2>
+  <!-- Children -->
+  <div class="policy-card">
+    <h2><span class="icon">👶</span> Children</h2>
     <p>The Application is not directed at anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13. If such information is discovered, it will be immediately deleted.</p>
     <p>If you are a parent or guardian and believe your child has provided personal information, please contact <a href="mailto:pluspluslevel@gmail.com">pluspluslevel@gmail.com</a>.</p>
-  </section>
+  </div>
 
-  <section>
-    <h2>Security</h2>
+  <!-- Security -->
+  <div class="policy-card">
+    <h2><span class="icon">🛡️</span> Security</h2>
     <p>The Service Provider implements physical, electronic, and procedural safeguards to protect the information it processes and maintains.</p>
-  </section>
+  </div>
 
-  <section>
-    <h2>Changes</h2>
+  <!-- Changes -->
+  <div class="policy-card">
+    <h2><span class="icon">🔄</span> Changes</h2>
     <p>This Privacy Policy may be updated from time to time. Changes will be reflected on this page with an updated effective date. Continued use of the Application constitutes acceptance of any changes.</p>
-  </section>
+  </div>
 
-  <section>
-    <h2>Your Consent</h2>
+  <!-- Consent -->
+  <div class="policy-card">
+    <h2><span class="icon">✅</span> Your Consent</h2>
     <p>By using the Application, you consent to the processing of your information as set forth in this Privacy Policy, now and as amended.</p>
-  </section>
+  </div>
 
-  <section>
-    <h2>Contact Us</h2>
-    <div class="contact-box">
-      <p>For privacy-related questions or concerns, please reach out:</p>
-      <p>📧 <a href="mailto:pluspluslevel@gmail.com">pluspluslevel@gmail.com</a></p>
+  <!-- Contact -->
+  <div class="policy-card">
+    <h2><span class="icon">📬</span> Contact Us</h2>
+    <p>For privacy-related questions or concerns, please reach out to the Service Provider:</p>
+    <div class="contact-card">
+      <div class="contact-icon">📧</div>
+      <div>
+        <p>Send us an email at</p>
+        <a href="mailto:pluspluslevel@gmail.com">pluspluslevel@gmail.com</a>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <footer>
-    <p>© 2026 Sarvesh Pandey · BhejoCalculator · All rights reserved</p>
-  </footer>
+</div><!-- /content -->
 
-</div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="https://play.google.com/store/apps/details?id=com.sarvesh.bhejocalculator" target="_blank" rel="noopener">Google Play</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:pluspluslevel@gmail.com">Contact</a>
+  </div>
+  <p class="footer-copy">© 2026 <span>Sarvesh Pandey</span> · BhejoCalculator · Made in India 🇮🇳 for the World 🌍</p>
+</footer>
+
 </body>
 </html>
