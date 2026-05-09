@@ -58,7 +58,7 @@
     .hero {
       position: relative;
       display: flex; flex-direction: column; align-items: center;
-      padding: 60px 24px 70px;
+      padding: 80px 24px 52px;
       text-align: center;
       overflow: hidden;
     }
@@ -68,14 +68,21 @@
       background: radial-gradient(ellipse, rgba(29,185,84,.1) 0%, transparent 65%);
       pointer-events: none;
     }
-    .hero-banner {
-      width: 100%; max-width: 920px;
-      border-radius: 20px; overflow: hidden;
-      box-shadow: 0 30px 100px rgba(0,0,0,.6);
-      margin-bottom: 52px; position: relative; z-index: 1;
-      animation: fadeUp .8s ease both;
+    /* ─── APP PREVIEW BANNER (below hero) ─── */
+    .app-preview {
+      padding: 0 24px 72px;
+      display: flex; justify-content: center;
+      background: var(--bg);
     }
-    .hero-banner img { width: 100%; display: block; }
+    .app-preview-inner {
+      width: 100%; max-width: 780px;
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 70px rgba(0,0,0,.55);
+      border: 1px solid var(--border);
+      animation: fadeUp .8s .5s ease both;
+      opacity: 0;
+    }
+    .app-preview-inner img { width: 100%; display: block; }
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
@@ -253,10 +260,6 @@
 <section class="hero">
   <div class="hero-glow"></div>
 
-  <div class="hero-banner">
-    <img src="src/bhejocalc_banner.png" alt="BhejoCalculator – All-In-One Financial & Cash Calculator" />
-  </div>
-
   <span class="hero-badge">🇮🇳 Made in India &nbsp;·&nbsp; For the World &nbsp;·&nbsp; Free on Google Play</span>
 
   <h1>All Your <em>Financial</em><br>Calculations. One App.</h1>
@@ -278,6 +281,13 @@
     <a class="btn btn-ghost" href="#screenshots">View Screenshots</a>
   </div>
 </section>
+
+<!-- APP PREVIEW BANNER -->
+<div class="app-preview">
+  <div class="app-preview-inner">
+    <img src="src/bhejocalc_banner.png" alt="BhejoCalculator – All-In-One Financial & Cash Calculator" />
+  </div>
+</div>
 
 <!-- STATS -->
 <div class="stats">
@@ -317,7 +327,7 @@
   <div class="screenshots-header">
     <span class="section-label">App Screenshots</span>
     <h2 class="section-title">Clean. Fast. Purposeful.</h2>
-    <p class="section-sub">A dark UI designed for focus — every screen does exactly one job, beautifully.</p>
+    <p class="section-sub">Adapts to your preference — dark, light, or follows your system theme. Every screen focused on one job.</p>
   </div>
   <div class="scroll-wrap">
     <div class="scroll-track">
